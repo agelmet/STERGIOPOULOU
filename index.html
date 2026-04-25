@@ -10,6 +10,8 @@
     <meta name="author" content="Advon Media">
     <meta name="robots" content="index, follow">
 
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -139,7 +141,7 @@
         }
         .service-card:hover::after { opacity: 1; transform: scale(1); }
 
-        /* Modern FAQ CSS Grid transition (prevents disappearing text issues) */
+        /* Independent FAQ Accordion CSS */
         .faq-answer-wrapper {
             display: grid;
             grid-template-rows: 0fr;
@@ -331,7 +333,7 @@
                     <h3 class="text-3xl font-serif mb-3">Εφήβων & Παιδιών</h3>
                     <div class="mb-6 text-xs font-bold tracking-[0.2em] text-brand-primary uppercase">Προσωπικη Αναπτυξη - 60'</div>
                     <p class="text-brand-bone font-light leading-relaxed">
-                        Αξιοποιώντας την κλινική εμπειρία ως συντονίστρια ομάδων παιδιών και εφήβων, παρέχεται εξειδικευμένη υποστήριξη. Παράλληλα, καθοδηγούνται ενήλικες που αναζητούν την προσωπική τους ανάπτυξη και επίλυση συγκρούσεων.
+                        Αξιοποιώντας την κλινική εμπειρία ως συντονίστρια ομάδων παιδιών και εφήβων, παρέχεται εξειδικευμένη υποστήριξη. Παράλληλα, καθοδηγούνται ενήλικες που αναζητούν την προσωπική τους ανάπτυ και επίλυση συγκρούσεων.
                     </p>
                 </div>
 
@@ -414,7 +416,7 @@
             </div>
 
             <div class="lg:col-span-8 space-y-2">
-                <div class="faq-item border-b border-brand-bone reveal">
+                <div class="faq-item active border-b border-brand-bone reveal">
                     <button class="faq-btn w-full py-8 text-left flex justify-between items-center bg-transparent focus:outline-none group">
                         <span class="flex items-center gap-6">
                             <span class="text-brand-sand font-display text-2xl group-hover:text-brand-primary transition-colors">01</span>
@@ -850,7 +852,7 @@
             link.addEventListener('click', toggleMobileMenu);
         });
 
-        // 3. Navbar Scroll Effect & Logo Scale
+        // 3. Navbar Scroll Effect
         const navContainer = document.getElementById('nav-container');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -882,23 +884,14 @@
             observer.observe(el);
         });
 
-        // 5. Solid FAQ Accordion Logic
+        // 5. Independent FAQ Accordion Logic
+        // This ensures items do NOT disappear when others are clicked. They toggle independently.
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             const btn = item.querySelector('.faq-btn');
             
             btn.addEventListener('click', () => {
-                const isOpen = item.classList.contains('active');
-                
-                // Close all other items
-                faqItems.forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                });
-                
-                // Toggle current item
-                if (!isOpen) {
-                    item.classList.add('active');
-                }
+                item.classList.toggle('active');
             });
         });
 
