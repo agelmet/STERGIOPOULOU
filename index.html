@@ -10,7 +10,8 @@
     <meta name="author" content="Advon Media">
     <meta name="robots" content="index, follow">
 
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn.doctoranytime.gr/profileimages/31e00517-7305-49b2-a013-b0b9234225ce.jpg" type="image/jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,17 +142,11 @@
         }
         .service-card:hover::after { opacity: 1; transform: scale(1); }
 
-        /* Independent FAQ Accordion CSS */
+        /* Independent FAQ Accordion CSS - Robust Max-Height Approach */
         .faq-answer-wrapper {
-            display: grid;
-            grid-template-rows: 0fr;
-            transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .faq-item.active .faq-answer-wrapper {
-            grid-template-rows: 1fr;
-        }
-        .faq-answer-inner {
+            max-height: 0;
             overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .faq-icon { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
         .faq-item.active .faq-icon { transform: rotate(135deg); }
@@ -161,10 +156,12 @@
 </head>
 <body id="top" class="antialiased overflow-x-hidden selection:bg-brand-primary selection:text-white">
 
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-500 py-6" id="navbar">
         <div class="max-w-[95rem] mx-auto px-6 lg:px-12">
             <div class="glass-panel rounded-full flex justify-between items-center px-8 py-4 shadow-glass transition-all duration-300 border-brand-bone" id="nav-container">
                 
+                <!-- Text-based Logo -->
                 <a href="#top" class="flex flex-col group items-start justify-center">
                     <span class="font-display text-lg lg:text-xl font-medium tracking-[0.15em] text-brand-dark group-hover:text-brand-primary transition-colors">ΒΑΣΙΛΙΚΗ ΣΤΕΡΓΙΟΠΟΥΛΟΥ</span>
                     <span class="font-sans text-[0.65rem] tracking-[0.3em] text-brand-primary uppercase mt-1">Κλινικη Ψυχολογος</span>
@@ -187,6 +184,7 @@
             </div>
         </div>
         
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/98 backdrop-blur-2xl z-40 hidden flex-col items-center justify-center space-y-10 opacity-0 transition-opacity duration-500 pt-20">
             <button id="close-mobile" class="absolute top-10 right-10 text-brand-sand p-2 hover:text-white transition-colors">
                 <i data-lucide="x" class="w-8 h-8"></i>
@@ -200,20 +198,25 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="relative h-[100svh] flex items-center justify-center overflow-hidden bg-brand-dark">
+        <!-- Parallax Background (Highly visible) -->
         <div class="absolute inset-0 z-0">
             <div class="w-full h-full bg-cover bg-center bg-no-repeat animate-kenburns opacity-100" style="background-image: url('https://cdn.doctoranytime.gr/practices/98b16f33-0fec-478d-8a86-b966a526230c.jpg');"></div>
         </div>
         
+        <!-- Refined Subtle Overlays so the image shines through beautifully -->
         <div class="absolute inset-0 bg-brand-dark/30 z-10"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-transparent to-brand-dark/90 z-10"></div>
         
         <div class="relative z-20 text-center px-6 max-w-4xl mx-auto mt-20 reveal">
+            <!-- Small luxury tag -->
             <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full glass-panel-dark text-white text-xs font-bold tracking-[0.2em] mb-10 border border-white/20 uppercase shadow-glass">
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-sand animate-pulse"></span>
                 Ιδιωτικο Γραφειο Ψυχολογιας
             </div>
 
+            <!-- Scaled down typography for a more elegant, editorial look -->
             <h1 class="font-display text-3xl md:text-5xl lg:text-5xl text-white mb-4 leading-tight tracking-[0.1em] drop-shadow-xl">
                 Βασιλική Στεργιοπούλου
             </h1>
@@ -233,22 +236,27 @@
             </a>
         </div>
 
+        <!-- Scroll Indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
             <i data-lucide="chevron-down" class="w-6 h-6 text-white/50"></i>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="py-32 px-6 relative bg-brand-alabaster">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
             
+            <!-- Dynamic Portrait Layout -->
             <div class="lg:col-span-5 relative reveal">
                 <div class="relative z-10 portrait-container aspect-[3/4] shadow-float border border-brand-bone bg-white p-2">
                     <img src="https://cdn.doctoranytime.gr/profileimages/31e00517-7305-49b2-a013-b0b9234225ce.jpg" alt="Βασιλική Στεργιοπούλου Κλινική Ψυχολόγος" class="w-full h-full object-cover rounded-lg">
                 </div>
+                <!-- Decorative geometry -->
                 <div class="absolute -bottom-10 -right-10 w-full h-full border border-brand-primary/20 rounded-xl z-0"></div>
                 <div class="absolute -top-10 -left-10 w-32 h-32 bg-brand-sand/30 rounded-full blur-2xl z-0"></div>
             </div>
 
+            <!-- Bio -->
             <div class="lg:col-span-7 reveal reveal-delay-1 lg:pl-10">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-12 h-px bg-brand-primary"></div>
@@ -264,7 +272,7 @@
                     <p>
                         Εξειδικεύτηκε στην Ομαδική Ανάλυση (Ινστιτούτο Ομαδικής Ανάλυσης Αθηνών), όπου και δραστηριοποιείται ενεργά ως Ψυχοθεραπεύτρια και Συντονίστρια Ομάδων. 
                     </p>
-                    <blockquote class="border-l-2 border-brand-primary pl-6 py-2 my-8 font-serif text-2xl italic text-brand-mocha">
+                    <blockquote class="border-l-2 border-brand-primary pl-4 md:pl-6 py-2 my-8 font-serif text-lg md:text-2xl italic text-brand-mocha">
                         "Η κλινική ματιά έχει σφυρηλατηθεί στα πιο απαιτητικά περιβάλλοντα, μετατρέποντας τη θεωρία σε άμεση, ουσιαστική πράξη."
                     </blockquote>
                     <p>
@@ -275,7 +283,9 @@
         </div>
     </section>
 
+    <!-- Interactive Services Section -->
     <section id="services" class="py-32 px-6 bg-brand-dark relative text-white">
+        <!-- Abstract Shapes -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[100px]"></div>
             <div class="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-brand-mocha/50 to-transparent"></div>
@@ -295,6 +305,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 
+                <!-- Service 01 -->
                 <div class="glass-panel-dark p-10 md:p-14 rounded-[2rem] group service-card reveal">
                     <div class="flex justify-between items-start mb-8">
                         <div class="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
@@ -309,6 +320,7 @@
                     </p>
                 </div>
 
+                <!-- Service 02 -->
                 <div class="glass-panel-dark p-10 md:p-14 rounded-[2rem] group service-card reveal reveal-delay-1">
                     <div class="flex justify-between items-start mb-8">
                         <div class="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
@@ -323,6 +335,7 @@
                     </p>
                 </div>
 
+                <!-- Service 03 -->
                 <div class="glass-panel-dark p-10 md:p-14 rounded-[2rem] group service-card reveal">
                     <div class="flex justify-between items-start mb-8">
                         <div class="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
@@ -333,10 +346,11 @@
                     <h3 class="text-3xl font-serif mb-3">Εφήβων & Παιδιών</h3>
                     <div class="mb-6 text-xs font-bold tracking-[0.2em] text-brand-primary uppercase">Προσωπικη Αναπτυξη - 60'</div>
                     <p class="text-brand-bone font-light leading-relaxed">
-                        Αξιοποιώντας την κλινική εμπειρία ως συντονίστρια ομάδων παιδιών και εφήβων, παρέχεται εξειδικευμένη υποστήριξη. Παράλληλα, καθοδηγούνται ενήλικες που αναζητούν την προσωπική τους ανάπτυ και επίλυση συγκρούσεων.
+                        Αξιοποιώντας την κλινική εμπειρία ως συντονίστρια ομάδων παιδιών και εφήβων, παρέχεται εξειδικευμένη υποστήριξη. Παράλληλα, καθοδηγούνται ενήλικες που αναζητούν την προσωπική τους ανάπτυξη και επίλυση συγκρούσεων.
                     </p>
                 </div>
 
+                <!-- Service 04 -->
                 <div class="glass-panel-dark p-10 md:p-14 rounded-[2rem] group service-card reveal reveal-delay-1">
                     <div class="flex justify-between items-start mb-8">
                         <div class="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
@@ -355,6 +369,7 @@
         </div>
     </section>
 
+    <!-- Philosophy Section -->
     <section id="philosophy" class="py-32 px-6 bg-brand-alabaster relative border-b border-brand-bone">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             
@@ -400,10 +415,11 @@
         </div>
     </section>
 
+    <!-- Refined FAQ Section - Independent Accordions -->
     <section id="faq" class="py-32 px-6 bg-white relative border-b border-brand-bone">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-start">
             
-            <div class="lg:col-span-4 sticky top-32 reveal">
+            <div class="lg:col-span-4 lg:sticky lg:top-32 reveal">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-12 h-px bg-brand-primary"></div>
                     <span class="text-brand-primary font-bold tracking-[0.2em] text-xs uppercase">Συχνες Ερωτησεις</span>
@@ -416,7 +432,8 @@
             </div>
 
             <div class="lg:col-span-8 space-y-2">
-                <div class="faq-item active border-b border-brand-bone reveal">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item border-b border-brand-bone reveal">
                     <button class="faq-btn w-full py-8 text-left flex justify-between items-center bg-transparent focus:outline-none group">
                         <span class="flex items-center gap-6">
                             <span class="text-brand-sand font-display text-2xl group-hover:text-brand-primary transition-colors">01</span>
@@ -425,14 +442,13 @@
                         <i data-lucide="plus" class="faq-icon w-6 h-6 text-brand-primary shrink-0 ml-4"></i>
                     </button>
                     <div class="faq-answer-wrapper">
-                        <div class="faq-answer-inner">
-                            <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
-                                Η ατομική θεραπεία είναι πιο στοχευμένη (60 λεπτά) και επικεντρώνεται αποκλειστικά στη δική σας ιστορία και συμπτώματα. Η ομαδική θεραπεία (90 λεπτά) λειτουργεί ως μικρόκοσμος της κοινωνίας, όπου μέσω της αλληλεπίδρασης με άλλους που αντιμετωπίζουν παρόμοιες προκλήσεις, χτίζετε διαπροσωπικές δεξιότητες και σπάτε την απομόνωση.
-                            </div>
+                        <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
+                            Η ατομική θεραπεία είναι πιο στοχευμένη (60 λεπτά) και επικεντρώνεται αποκλειστικά στη δική σας ιστορία και συμπτώματα. Η ομαδική θεραπεία (90 λεπτά) λειτουργεί ως μικρόκοσμος της κοινωνίας, όπου μέσω της αλληλεπίδρασης με άλλους που αντιμετωπίζουν παρόμοιες προκλήσεις, χτίζετε διαπροσωπικές δεξιότητες και σπάτε την απομόνωση.
                         </div>
                     </div>
                 </div>
 
+                <!-- FAQ Item 2 -->
                 <div class="faq-item border-b border-brand-bone reveal reveal-delay-1">
                     <button class="faq-btn w-full py-8 text-left flex justify-between items-center bg-transparent focus:outline-none group">
                         <span class="flex items-center gap-6">
@@ -442,14 +458,13 @@
                         <i data-lucide="plus" class="faq-icon w-6 h-6 text-brand-primary shrink-0 ml-4"></i>
                     </button>
                     <div class="faq-answer-wrapper">
-                        <div class="faq-answer-inner">
-                            <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
-                                Ναι, οι ατομικές συνεδρίες παρέχονται και διαδικτυακά. Διεξάγονται μέσω ασφαλούς πλατφόρμας βιντεοκλήσης, με την ίδια αυστηρή τήρηση του απορρήτου, τον ίδιο επαγγελματισμό και τη ζεστασιά μιας διά ζώσης συνεδρίας.
-                            </div>
+                        <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
+                            Ναι, οι ατομικές συνεδρίες παρέχονται και διαδικτυακά. Διεξάγονται μέσω ασφαλούς πλατφόρμας βιντεοκλήσης, με την ίδια αυστηρή τήρηση του απορρήτου, τον ίδιο επαγγελματισμό και τη ζεστασιά μιας διά ζώσης συνεδρίας.
                         </div>
                     </div>
                 </div>
 
+                <!-- FAQ Item 3 -->
                 <div class="faq-item border-b border-brand-bone reveal reveal-delay-2">
                     <button class="faq-btn w-full py-8 text-left flex justify-between items-center bg-transparent focus:outline-none group">
                         <span class="flex items-center gap-6">
@@ -459,14 +474,13 @@
                         <i data-lucide="plus" class="faq-icon w-6 h-6 text-brand-primary shrink-0 ml-4"></i>
                     </button>
                     <div class="faq-answer-wrapper">
-                        <div class="faq-answer-inner">
-                            <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
-                                Η πρώτη συνεδρία είναι κυρίως αναγνωριστική. Θα δημιουργήσουμε έναν ασφαλή χώρο χωρίς καμία κριτική, για να ακούσω τους λόγους που σας οδήγησαν εδώ, να κατανοήσω το αίτημά σας και να συζητήσουμε από κοινού το θεραπευτικό πλάνο που σας ταιριάζει.
-                            </div>
+                        <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
+                            Η πρώτη συνεδρία είναι κυρίως αναγνωριστική. Θα δημιουργήσουμε έναν ασφαλή χώρο χωρίς καμία κριτική, για να ακούσω τους λόγους που σας οδήγησαν εδώ, να κατανοήσω το αίτημά σας και να συζητήσουμε από κοινού το θεραπευτικό πλάνο που σας ταιριάζει.
                         </div>
                     </div>
                 </div>
 
+                <!-- FAQ Item 4 -->
                 <div class="faq-item border-b border-brand-bone reveal reveal-delay-3">
                     <button class="faq-btn w-full py-8 text-left flex justify-between items-center bg-transparent focus:outline-none group">
                         <span class="flex items-center gap-6">
@@ -476,10 +490,8 @@
                         <i data-lucide="plus" class="faq-icon w-6 h-6 text-brand-primary shrink-0 ml-4"></i>
                     </button>
                     <div class="faq-answer-wrapper">
-                        <div class="faq-answer-inner">
-                            <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
-                                Φυσικά. Η ψυχοθεραπεία δεν απευθύνεται μόνο σε ανθρώπους με κλινικά συμπτώματα όπως άγχος ή κατάθλιψη. Είναι ένα εξαιρετικό εργαλείο για την προσωπική σας ανάπτυξη, τη βελτίωση των σχέσεών σας, την αυτογνωσία και τη θέσπιση υγιών ορίων στη ζωή σας.
-                            </div>
+                        <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
+                            Φυσικά. Η ψυχοθεραπεία δεν απευθύνεται μόνο σε ανθρώπους με κλινικά συμπτώματα όπως άγχος ή κατάθλιψη. Είναι ένα εξαιρετικό εργαλείο για την προσωπική σας ανάπτυξη, τη βελτίωση των σχέσεών σας, την αυτογνωσία και τη θέσπιση υγιών ορίων στη ζωή σας.
                         </div>
                     </div>
                 </div>
@@ -487,6 +499,7 @@
         </div>
     </section>
 
+    <!-- Symmetrical Space Gallery Section -->
     <section id="space" class="py-32 px-6 bg-brand-alabaster relative">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20 reveal">
@@ -499,7 +512,9 @@
                 <p class="text-brand-text font-light max-w-2xl mx-auto">Ένα περιβάλλον σχεδιασμένο με αισθητική και σεβασμό, για να αποπνέει ηρεμία, ζεστασιά και απόλυτη ιδιωτικότητα.</p>
             </div>
 
+            <!-- Symmetrical CSS Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Images (Forcing aspect ratios for perfect symmetry) -->
                 <button class="aspect-[4/3] w-full rounded-xl overflow-hidden group relative reveal shadow-glass border border-brand-bone" onclick="openLightbox('https://cdn.doctoranytime.gr/practices/e7b01a23-3bbc-4ced-9d46-30dc525677e2.jpg')">
                     <img src="https://cdn.doctoranytime.gr/practices/e7b01a23-3bbc-4ced-9d46-30dc525677e2.jpg" alt="Χώρος" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
                     <div class="absolute inset-0 bg-brand-mocha/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
@@ -542,6 +557,7 @@
                     </div>
                 </button>
 
+                <!-- 7th Image spans the full width to maintain perfect symmetry -->
                 <button class="md:col-span-2 lg:col-span-3 aspect-[16/9] md:aspect-[21/9] lg:aspect-[24/7] w-full rounded-xl overflow-hidden group relative reveal shadow-glass border border-brand-bone" onclick="openLightbox('https://cdn.doctoranytime.gr/practices/877c2ae3-6945-4761-81c6-a18572095092.jpg')">
                     <img src="https://cdn.doctoranytime.gr/practices/877c2ae3-6945-4761-81c6-a18572095092.jpg" alt="Χώρος" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
                     <div class="absolute inset-0 bg-brand-mocha/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
@@ -552,6 +568,7 @@
         </div>
     </section>
 
+    <!-- Lightbox -->
     <div id="lightbox" class="fixed inset-0 z-[100] bg-brand-dark/98 flex items-center justify-center cursor-zoom-out" onclick="closeLightbox()">
         <button class="absolute top-8 right-8 text-brand-sand hover:text-white transition-colors duration-300">
             <i data-lucide="x" class="w-10 h-10"></i>
@@ -559,6 +576,7 @@
         <img id="lightbox-img" src="" alt="Προβολή Χώρου" class="max-w-[95vw] max-h-[95vh] object-contain rounded-md cursor-default shadow-float border border-brand-primary/20" onclick="event.stopPropagation()">
     </div>
 
+    <!-- Reviews Carousel -->
     <section id="reviews" class="py-32 bg-white overflow-hidden border-t border-brand-bone relative">
         <div class="max-w-7xl mx-auto px-6 mb-16 text-center reveal">
             <div class="flex items-center justify-center gap-4 mb-6">
@@ -571,11 +589,14 @@
         </div>
 
         <div class="w-full relative pb-10">
+            <!-- Fade Edges -->
             <div class="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
             <div class="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
             
             <div class="marquee-container animate-marquee">
+                <!-- Review Items Block -->
                 <div class="flex space-x-6 px-3">
+                    <!-- Danae -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
                         <div class="flex justify-between items-center mb-6">
                             <div>
@@ -593,6 +614,7 @@
                         </div>
                     </div>
 
+                    <!-- Dimitris -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
                         <div class="flex justify-between items-center mb-6">
                             <div>
@@ -610,6 +632,7 @@
                         </div>
                     </div>
 
+                    <!-- Barbara -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
                         <div class="flex justify-between items-center mb-6">
                             <div>
@@ -627,6 +650,7 @@
                         </div>
                     </div>
 
+                    <!-- Argiro -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
                         <div class="flex justify-between items-center mb-6">
                             <div>
@@ -644,6 +668,7 @@
                         </div>
                     </div>
 
+                    <!-- Konstantina -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
                         <div class="flex justify-between items-center mb-6">
                             <div>
@@ -662,7 +687,9 @@
                     </div>
                 </div>
 
+                <!-- Duplicate for seamless loop -->
                 <div class="flex space-x-6 px-3" aria-hidden="true">
+                    <!-- Danae -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
                         <div class="flex justify-between items-center mb-6">
                             <div>
@@ -680,6 +707,7 @@
                         </div>
                     </div>
 
+                    <!-- Dimitris -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
                         <div class="flex justify-between items-center mb-6">
                             <div>
@@ -697,6 +725,7 @@
                         </div>
                     </div>
 
+                    <!-- Barbara -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
                         <div class="flex justify-between items-center mb-6">
                             <div>
@@ -714,6 +743,7 @@
                         </div>
                     </div>
 
+                    <!-- Argiro -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
                         <div class="flex justify-between items-center mb-6">
                             <div>
@@ -731,6 +761,7 @@
                         </div>
                     </div>
 
+                    <!-- Konstantina -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
                         <div class="flex justify-between items-center mb-6">
                             <div>
@@ -759,6 +790,7 @@
         </div>
     </section>
 
+    <!-- Footer / Contact -->
     <footer id="contact" class="bg-brand-dark text-white pt-32 pb-12 relative overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute -top-40 left-1/2 w-[800px] h-[800px] bg-brand-primary/10 rounded-full blur-[120px] transform -translate-x-1/2"></div>
@@ -884,14 +916,26 @@
             observer.observe(el);
         });
 
-        // 5. Independent FAQ Accordion Logic
-        // This ensures items do NOT disappear when others are clicked. They toggle independently.
+        // 5. Solid FAQ Accordion Logic - Reliable Inline max-height calculation
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             const btn = item.querySelector('.faq-btn');
+            const wrapper = item.querySelector('.faq-answer-wrapper');
             
             btn.addEventListener('click', () => {
-                item.classList.toggle('active');
+                const isActive = item.classList.contains('active');
+                
+                // Close all
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer-wrapper').style.maxHeight = null;
+                });
+                
+                // Toggle current
+                if (!isActive) {
+                    item.classList.add('active');
+                    wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+                }
             });
         });
 
