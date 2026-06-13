@@ -10,7 +10,7 @@
     <meta name="author" content="Advon Media">
     <meta name="robots" content="index, follow">
 
-    <!-- Updated Favicon -->
+    <!-- Favicon Updated to requested portrait image -->
     <link rel="icon" href="https://raw.githubusercontent.com/agelmet/STERGIOPOULOU/refs/heads/main/stergiop.jpg" type="image/jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#4A5839',      // Warm, soft Olive Green
+                            dark: '#4A5839',      // Warm, soft Olive Green (Χρώμα της ελιάς)
                             mocha: '#38432A',     // Deeper Olive for contrast
                             primary: '#8C6F56',   // Muted Bronze/Brown accent
                             sand: '#D4C3B3',      // Warm Sand
@@ -42,15 +42,14 @@
                     boxShadow: {
                         'glass': '0 8px 32px 0 rgba(74, 88, 57, 0.1)',
                         'float': '0 30px 60px -20px rgba(74, 88, 57, 0.2)',
-                        'glow': '0 0 50px -10px rgba(140, 111, 86, 0.4)',
+                        'glow': '0 0 50px -10px rgba(212, 195, 179, 0.3)',
                     },
                     animation: {
                         'marquee': 'marquee 50s linear infinite',
                         'float-slow': 'float 8s ease-in-out infinite',
                         'pulse-glow': 'pulseGlow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'spin-slow': 'spin 35s linear infinite',
-                        'slide-down': 'slideDown 5s ease-in-out infinite',
-                        'fade-in': 'fadeIn 0.4s ease-out forwards',
+                        'grid-move': 'gridMove 20s linear infinite',
+                        'spin-slow': 'spin 25s linear infinite',
                     },
                     keyframes: {
                         marquee: {
@@ -59,20 +58,15 @@
                         },
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' },
+                            '50%': { transform: 'translateY(-20px)' },
                         },
                         pulseGlow: {
                             '0%, 100%': { opacity: 0.5, filter: 'brightness(1)' },
                             '50%': { opacity: 0.8, filter: 'brightness(1.2)' },
                         },
-                        slideDown: {
-                            '0%': { transform: 'translateY(-100%)', opacity: 0 },
-                            '50%': { opacity: 1 },
-                            '100%': { transform: 'translateY(100vh)', opacity: 0 },
-                        },
-                        fadeIn: {
-                            '0%': { opacity: 0, transform: 'translateY(-10px)' },
-                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        gridMove: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(4rem)' },
                         }
                     }
                 }
@@ -90,7 +84,7 @@
         body { background-color: #F7F5F0; color: #4A4036; }
 
         /* Advanced Reveal Animations */
-        .reveal { opacity: 0; transform: translateY(40px); filter: blur(3px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal { opacity: 0; transform: translateY(40px); filter: blur(4px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); filter: blur(0); }
         .reveal-delay-1 { transition-delay: 0.15s; }
         .reveal-delay-2 { transition-delay: 0.3s; }
@@ -105,10 +99,10 @@
         }
         
         .glass-panel-dark {
-            background: rgba(74, 88, 57, 0.3);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 195, 179, 0.15);
+            background: rgba(74, 88, 57, 0.5); /* Olive glass */
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(212, 195, 179, 0.2);
         }
 
         /* Moving Portrait Effect */
@@ -154,17 +148,9 @@
         }
         .service-card:hover::after { opacity: 1; transform: scale(1); }
 
-        /* Native Details/Summary FAQ */
-        details > summary {
-            list-style: none;
-        }
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
-        details[open] summary ~ * {
-            animation: fade-in 0.4s ease-out forwards;
-        }
     </style>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body id="top" class="antialiased overflow-x-hidden selection:bg-brand-primary selection:text-white">
 
@@ -210,59 +196,56 @@
         </div>
     </nav>
 
-    <!-- Enhanced Hero Section -->
-    <section class="relative h-[80svh] lg:h-[100svh] flex items-center justify-center overflow-hidden bg-brand-dark">
+    <!-- Hero Section (Abstract & Elegant without Image) -->
+    <section class="relative h-[90svh] lg:h-[100svh] flex flex-col items-center justify-center overflow-hidden bg-brand-dark">
         
-        <!-- Visible Parallax Background Image -->
-        <div class="absolute inset-0 z-0">
-            <div class="w-full h-full bg-cover bg-center bg-no-repeat opacity-60 transition-transform duration-[30s]" style="background-image: url('https://cdn.doctoranytime.gr/practices/98b16f33-0fec-478d-8a86-b966a526230c.jpg'); transform: scale(1.05);"></div>
-        </div>
-
-        <!-- Architectural Vertical Lines -->
-        <div class="absolute left-[15%] top-0 bottom-0 w-px bg-white/10 z-10 hidden md:block">
-            <div class="w-full h-32 bg-gradient-to-b from-transparent via-brand-sand to-transparent animate-slide-down"></div>
-        </div>
-        <div class="absolute right-[15%] top-0 bottom-0 w-px bg-white/10 z-10 hidden md:block">
-            <div class="w-full h-32 bg-gradient-to-b from-transparent via-brand-sand to-transparent animate-slide-down" style="animation-delay: 2.5s;"></div>
+        <!-- Animated Geometric Grid Background -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,195,179,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,195,179,0.15)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_90%_90%_at_50%_50%,#000_10%,transparent_100%)] animate-grid-move"></div>
         </div>
         
-        <!-- Elegant Geometric Rings -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] md:w-[60vw] aspect-square rounded-full border border-white/5 animate-spin-slow z-10 pointer-events-none"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] md:w-[80vw] aspect-square rounded-full border border-white/5 animate-[spin_45s_linear_infinite_reverse] z-10 pointer-events-none"></div>
+        <!-- Animated Orbs for elegant background depth -->
+        <div class="absolute top-1/4 left-1/4 w-[50vw] h-[50vw] bg-brand-primary/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-glow z-0"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[40vw] h-[40vw] bg-brand-sand/15 rounded-full blur-[100px] mix-blend-screen animate-float-slow z-0"></div>
+        
+        <!-- Architectural Lines -->
+        <div class="absolute left-8 md:left-24 top-0 w-px h-full bg-gradient-to-b from-transparent via-brand-sand/30 to-transparent z-10"></div>
+        <div class="absolute right-8 md:right-24 top-0 w-px h-full bg-gradient-to-b from-transparent via-brand-sand/30 to-transparent z-10"></div>
+        <div class="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-sand/20 to-transparent z-10 hidden md:block"></div>
 
-        <!-- Gradient Overlays for depth but keeping image visible -->
-        <div class="absolute inset-0 bg-brand-dark/20 z-10 mix-blend-multiply"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/40 z-10"></div>
+        <!-- Decorative Spinning Element -->
+        <div class="absolute top-32 right-12 md:right-32 z-10 animate-spin-slow opacity-40">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D4C3B3" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+        </div>
 
-        <!-- Main Content -->
-        <div class="relative z-20 text-center px-6 max-w-4xl mx-auto mt-20 reveal">
+        <div class="relative z-20 text-center px-6 max-w-4xl mx-auto reveal mt-12">
             <!-- Small luxury tag -->
-            <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full glass-panel-dark text-white text-[0.65rem] md:text-xs font-bold tracking-[0.25em] mb-12 border border-brand-sand/30 uppercase shadow-lg backdrop-blur-md">
-                <span class="w-1.5 h-1.5 rounded-full bg-brand-sand animate-pulse"></span>
+            <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-brand-sand/30 bg-brand-mocha/40 backdrop-blur-md text-brand-sand text-xs font-bold tracking-[0.2em] mb-12 uppercase shadow-glass transform hover:scale-105 transition-transform">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-sand animate-ping"></span>
                 Ιδιωτικο Γραφειο Ψυχολογιας
             </div>
 
             <!-- Clean, elegant typography -->
-            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight tracking-[0.1em] drop-shadow-2xl">
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight tracking-[0.1em] drop-shadow-xl">
                 Βασιλική Στεργιοπούλου
             </h1>
-            <h2 class="font-serif text-2xl md:text-3xl text-brand-sand italic mb-12 font-light tracking-widest drop-shadow-lg">
+            <h2 class="font-serif text-2xl md:text-3xl text-brand-sand italic mb-12 font-light tracking-widest drop-shadow-md">
                 Κλινική Ψυχολόγος & Ομαδική Αναλύτρια
             </h2>
             
-            <div class="w-px h-20 md:h-24 bg-gradient-to-b from-brand-sand/80 to-transparent mx-auto mb-12 relative">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-brand-sand"></div>
-            </div>
+            <div class="w-px h-24 bg-gradient-to-b from-brand-sand to-transparent mx-auto mb-12"></div>
 
-            <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 bg-brand-sand/10 backdrop-blur-md border border-brand-sand/60 text-white rounded-full font-bold tracking-[0.2em] text-xs uppercase hover:bg-brand-sand hover:text-brand-dark transition-all duration-500 shadow-[0_0_30px_rgba(212,195,179,0.15)] hover:shadow-[0_0_40px_rgba(212,195,179,0.4)] group">
+            <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 bg-transparent border border-brand-sand text-brand-sand rounded-full font-bold tracking-[0.15em] text-xs uppercase hover:bg-brand-sand hover:text-brand-dark transition-all duration-500 shadow-glow group">
                 Ξεκινηστε Σημερα
                 <i data-lucide="arrow-right" class="w-4 h-4 ml-3 group-hover:translate-x-1 transition-transform"></i>
             </a>
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-            <div class="w-px h-12 bg-gradient-to-b from-brand-sand/60 to-transparent mx-auto"></div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-brand-sand/70"></i>
         </div>
     </section>
 
@@ -324,6 +307,7 @@
                 <p class="text-brand-bone font-light max-w-sm pb-2">Δομημένες θεραπευτικές προσεγγίσεις προσαρμοσμένες στις δικές σας μοναδικές ανάγκες.</p>
             </div>
 
+            <!-- 3 Columns for 3 services -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
                 <!-- Service 01 -->
@@ -375,7 +359,7 @@
         </div>
     </section>
 
-    <!-- Philosophy Section -->
+    <!-- Philosophy Section (No Images) -->
     <section id="philosophy" class="py-32 px-6 bg-brand-alabaster relative border-b border-brand-bone">
         <div class="max-w-4xl mx-auto">
             
@@ -386,10 +370,11 @@
                     <div class="w-12 h-px bg-brand-primary"></div>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mb-8 leading-tight">Η Θεραπευτική Φιλοσοφία</h2>
-                <p class="text-brand-text font-light text-lg mb-10 max-w-2xl mx-auto">
+                <p class="text-brand-text font-light text-lg mb-8 max-w-2xl mx-auto">
                     Ένας χώρος όπου η επιστήμη συναντά την απόλυτη ανθρώπινη αποδοχή. Η πρακτική στηρίζεται σε τρεις βασικούς άξονες:
                 </p>
-                <blockquote class="text-base md:text-xl italic text-brand-mocha font-serif mt-6">
+                
+                <blockquote class="border-l-2 border-brand-primary pl-4 py-2 my-6 font-serif text-base md:text-xl italic text-brand-mocha mx-auto max-w-2xl text-left bg-brand-bone/30 rounded-r-lg">
                     "Η κλινική ματιά έχει σφυρηλατηθεί στα πιο απαιτητικά περιβάλλοντα, μετατρέποντας τη θεωρία σε άμεση, ουσιαστική πράξη."
                 </blockquote>
             </div>
@@ -423,94 +408,90 @@
         </div>
     </section>
 
-    <!-- FAQ Section (Native Details/Summary Dropdown) -->
+    <!-- FAQ Section (Standard Dropdown) -->
     <section id="faq" class="py-32 px-6 bg-white relative border-b border-brand-bone">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-start">
+        <div class="max-w-4xl mx-auto">
             
-            <div class="lg:col-span-4 reveal">
-                <div class="flex items-center gap-4 mb-6">
+            <div class="text-center reveal mb-16">
+                <div class="flex items-center justify-center gap-4 mb-6">
                     <div class="w-12 h-px bg-brand-primary"></div>
                     <span class="text-brand-primary font-bold tracking-[0.2em] text-xs uppercase">Συχνες Ερωτησεις</span>
+                    <div class="w-12 h-px bg-brand-primary"></div>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mb-6">Απαντήσεις <br>στις απορίες σας</h2>
-                <p class="text-brand-text font-light mb-8">Βρείτε απαντήσεις στα πιο συνηθισμένα ερωτήματα σχετικά με τη θεραπευτική διαδικασία και τη λειτουργία του γραφείου.</p>
-                <a href="#contact" class="text-brand-primary font-bold uppercase tracking-widest text-xs hover:text-brand-dark transition-colors flex items-center gap-2">
-                    Επικοινωνηστε μαζι μου <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mb-6">Απαντήσεις στις απορίες σας</h2>
+                <p class="text-brand-text font-light">Βρείτε απαντήσεις στα πιο συνηθισμένα ερωτήματα σχετικά με τη θεραπευτική διαδικασία.</p>
             </div>
 
-            <div class="lg:col-span-8 space-y-2">
-                
-                <!-- Native Details FAQ 1 -->
-                <details class="group border-b border-brand-bone pb-6 mb-6 reveal">
-                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
-                        <span class="flex items-center gap-6">
-                            <span class="text-brand-sand font-display text-2xl group-open:text-brand-primary transition-colors">01</span>
-                            <span class="font-serif text-xl md:text-2xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Ποια είναι η διαφορά της ατομικής από την ομαδική ψυχοθεραπεία;</span>
-                        </span>
-                        <span class="transition-transform duration-300 group-open:-rotate-180 shrink-0 ml-4">
-                            <i data-lucide="chevron-down" class="w-6 h-6 text-brand-primary"></i>
-                        </span>
-                    </summary>
-                    <div class="pl-14 md:pl-16 pt-6 text-brand-text font-light leading-relaxed">
-                        Η ατομική θεραπεία είναι πιο στοχευμένη και επικεντρώνεται αποκλειστικά στη δική σας ιστορία. Η ομαδική θεραπεία λειτουργεί ως μικρόκοσμος της κοινωνίας, όπου μέσω της αλληλεπίδρασης με άλλους, χτίζετε διαπροσωπικές δεξιότητες και σπάτε την απομόνωση.
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item border-b border-brand-bone group reveal">
+                    <button class="faq-btn w-full py-6 text-left flex justify-between items-center bg-transparent focus:outline-none cursor-pointer">
+                        <div class="flex items-center gap-4 md:gap-6 pr-4">
+                            <span class="text-brand-sand font-display text-xl md:text-2xl group-hover:text-brand-primary transition-colors">01</span>
+                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Ποια είναι η διαφορά της ατομικής από την ομαδική ψυχοθεραπεία;</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
+                            Η ατομική θεραπεία είναι πιο στοχευμένη και επικεντρώνεται αποκλειστικά στη δική σας ιστορία. Η ομαδική θεραπεία λειτουργεί ως μικρόκοσμος της κοινωνίας, όπου μέσω της αλληλεπίδρασης με άλλους, χτίζετε διαπροσωπικές δεξιότητες και σπάτε την απομόνωση.
+                        </div>
                     </div>
-                </details>
+                </div>
 
-                <!-- Native Details FAQ 2 -->
-                <details class="group border-b border-brand-bone pb-6 mb-6 reveal reveal-delay-1">
-                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
-                        <span class="flex items-center gap-6">
-                            <span class="text-brand-sand font-display text-2xl group-open:text-brand-primary transition-colors">02</span>
-                            <span class="font-serif text-xl md:text-2xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Παρέχονται συνεδρίες εξ αποστάσεως (online);</span>
-                        </span>
-                        <span class="transition-transform duration-300 group-open:-rotate-180 shrink-0 ml-4">
-                            <i data-lucide="chevron-down" class="w-6 h-6 text-brand-primary"></i>
-                        </span>
-                    </summary>
-                    <div class="pl-14 md:pl-16 pt-6 text-brand-text font-light leading-relaxed">
-                        Ναι, οι δυαδικές συνεδρίες μπορούν να πραγματοποιηθούν και διαδικτυακά, με την ίδια τήρηση του απορρήτου, τον ίδιο επαγγελματισμό και τη ζεστασιά μιας διά ζώσης συνεδρίας.
+                <!-- FAQ Item 2 -->
+                <div class="faq-item border-b border-brand-bone group reveal reveal-delay-1">
+                    <button class="faq-btn w-full py-6 text-left flex justify-between items-center bg-transparent focus:outline-none cursor-pointer">
+                        <div class="flex items-center gap-4 md:gap-6 pr-4">
+                            <span class="text-brand-sand font-display text-xl md:text-2xl group-hover:text-brand-primary transition-colors">02</span>
+                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Παρέχονται συνεδρίες εξ αποστάσεως (online);</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
+                            Ναι, οι δυαδικές συνεδρίες μπορούν να πραγματοποιηθούν και διαδικτυακά, με την ίδια τήρηση του απορρήτου, τον ίδιο επαγγελματισμό και τη ζεστασιά μιας διά ζώσης συνεδρίας.
+                        </div>
                     </div>
-                </details>
+                </div>
 
-                <!-- Native Details FAQ 3 -->
-                <details class="group border-b border-brand-bone pb-6 mb-6 reveal reveal-delay-2">
-                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
-                        <span class="flex items-center gap-6">
-                            <span class="text-brand-sand font-display text-2xl group-open:text-brand-primary transition-colors">03</span>
-                            <span class="font-serif text-xl md:text-2xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Τι θα συμβεί στην πρώτη μας συνεδρία;</span>
-                        </span>
-                        <span class="transition-transform duration-300 group-open:-rotate-180 shrink-0 ml-4">
-                            <i data-lucide="chevron-down" class="w-6 h-6 text-brand-primary"></i>
-                        </span>
-                    </summary>
-                    <div class="pl-14 md:pl-16 pt-6 text-brand-text font-light leading-relaxed">
-                        Η πρώτη συνεδρία είναι κυρίως αναγνωριστική. Θα δημιουργήσουμε έναν ασφαλή χώρο χωρίς καμία κριτική, για να ακούσω τους λόγους που σας οδήγησαν εδώ, να κατανοήσω το αίτημά σας και να συζητήσουμε από κοινού το θεραπευτικό πλάνο.
+                <!-- FAQ Item 3 -->
+                <div class="faq-item border-b border-brand-bone group reveal reveal-delay-2">
+                    <button class="faq-btn w-full py-6 text-left flex justify-between items-center bg-transparent focus:outline-none cursor-pointer">
+                        <div class="flex items-center gap-4 md:gap-6 pr-4">
+                            <span class="text-brand-sand font-display text-xl md:text-2xl group-hover:text-brand-primary transition-colors">03</span>
+                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Τι θα συμβεί στην πρώτη μας συνεδρία;</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
+                            Η πρώτη συνεδρία είναι κυρίως αναγνωριστική. Θα δημιουργήσουμε έναν ασφαλή χώρο χωρίς καμία κριτική, για να ακούσω τους λόγους που σας οδήγησαν εδώ, να κατανοήσω το αίτημά σας και να συζητήσουμε από κοινού το θεραπευτικό πλάνο.
+                        </div>
                     </div>
-                </details>
+                </div>
 
-                <!-- Native Details FAQ 4 -->
-                <details class="group border-b border-brand-bone pb-6 mb-6 reveal reveal-delay-3">
-                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
-                        <span class="flex items-center gap-6">
-                            <span class="text-brand-sand font-display text-2xl group-open:text-brand-primary transition-colors">04</span>
-                            <span class="font-serif text-xl md:text-2xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Μπορώ να κάνω ψυχοθεραπεία αν δεν έχω κλινική διαταραχή;</span>
-                        </span>
-                        <span class="transition-transform duration-300 group-open:-rotate-180 shrink-0 ml-4">
-                            <i data-lucide="chevron-down" class="w-6 h-6 text-brand-primary"></i>
-                        </span>
-                    </summary>
-                    <div class="pl-14 md:pl-16 pt-6 text-brand-text font-light leading-relaxed">
-                        Φυσικά. Η ψυχοθεραπεία δεν απευθύνεται μόνο σε ανθρώπους με κλινικά συμπτώματα. Είναι ένα εξαιρετικό εργαλείο για την προσωπική ανάπτυξη, τη βελτίωση των σχέσεων, την αυτογνωσία και τη θέσπιση υγιών ορίων στη ζωή.
+                <!-- FAQ Item 4 -->
+                <div class="faq-item border-b border-brand-bone group reveal reveal-delay-3">
+                    <button class="faq-btn w-full py-6 text-left flex justify-between items-center bg-transparent focus:outline-none cursor-pointer">
+                        <div class="flex items-center gap-4 md:gap-6 pr-4">
+                            <span class="text-brand-sand font-display text-xl md:text-2xl group-hover:text-brand-primary transition-colors">04</span>
+                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Μπορώ να κάνω ψυχοθεραπεία αν δεν έχω κλινική διαταραχή;</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
+                            Φυσικά. Η ψυχοθεραπεία δεν απευθύνεται μόνο σε ανθρώπους με κλινικά συμπτώματα. Είναι ένα εξαιρετικό εργαλείο για την προσωπική ανάπτυξη, τη βελτίωση των σχέσεων, την αυτογνωσία και τη θέσπιση υγιών ορίων στη ζωή.
+                        </div>
                     </div>
-                </details>
-
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Symmetrical Space Gallery Section -->
-    <section id="space" class="py-32 px-6 bg-brand-alabaster relative">
+    <section id="space" class="py-32 px-6 bg-brand-alabaster relative border-b border-brand-bone">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20 reveal">
                 <div class="flex items-center justify-center gap-4 mb-6">
@@ -524,7 +505,6 @@
 
             <!-- Symmetrical CSS Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Gallery Images -->
                 <button class="aspect-[4/3] w-full rounded-xl overflow-hidden group relative reveal shadow-glass border border-brand-bone" onclick="openLightbox('https://cdn.doctoranytime.gr/practices/e7b01a23-3bbc-4ced-9d46-30dc525677e2.jpg')">
                     <img src="https://cdn.doctoranytime.gr/practices/e7b01a23-3bbc-4ced-9d46-30dc525677e2.jpg" alt="Χώρος" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
                     <div class="absolute inset-0 bg-brand-mocha/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
@@ -567,7 +547,7 @@
                     </div>
                 </button>
 
-                <!-- 7th Image spans the full width to maintain perfect symmetry -->
+                <!-- 7th Image spans full width below -->
                 <button class="md:col-span-2 lg:col-span-3 aspect-[16/9] md:aspect-[21/9] lg:aspect-[24/7] w-full rounded-xl overflow-hidden group relative reveal shadow-glass border border-brand-bone" onclick="openLightbox('https://cdn.doctoranytime.gr/practices/877c2ae3-6945-4761-81c6-a18572095092.jpg')">
                     <img src="https://cdn.doctoranytime.gr/practices/877c2ae3-6945-4761-81c6-a18572095092.jpg" alt="Χώρος" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
                     <div class="absolute inset-0 bg-brand-mocha/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
@@ -599,12 +579,10 @@
         </div>
 
         <div class="w-full relative pb-10">
-            <!-- Fade Edges -->
             <div class="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
             <div class="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
             
             <div class="marquee-container animate-marquee">
-                <!-- Review Items Block -->
                 <div class="flex space-x-6 px-3">
                     <!-- Danae -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
@@ -926,7 +904,33 @@
             observer.observe(el);
         });
 
-        // 5. Lightbox functionality
+        // 5. Standard FAQ Accordion Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const btn = item.querySelector('.faq-btn');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            
+            btn.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+                
+                // Close all
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                });
+                
+                // Toggle current
+                if (!isOpen) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // 6. Lightbox functionality
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
