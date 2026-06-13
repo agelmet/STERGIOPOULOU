@@ -148,6 +148,11 @@
         }
         .service-card:hover::after { opacity: 1; transform: scale(1); }
 
+        /* Standard FAQ dropdown */
+        .faq-box summary::-webkit-details-marker { display: none; }
+        .faq-box summary::marker { content: ""; }
+        .faq-box[open] .faq-chevron { transform: rotate(180deg); }
+
     </style>
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -196,56 +201,50 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Abstract & Elegant without Image) -->
-    <section class="relative h-[90svh] lg:h-[100svh] flex flex-col items-center justify-center overflow-hidden bg-brand-dark">
-        
-        <!-- Animated Geometric Grid Background -->
-        <div class="absolute inset-0 z-0 opacity-40">
-            <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,195,179,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,195,179,0.15)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_90%_90%_at_50%_50%,#000_10%,transparent_100%)] animate-grid-move"></div>
-        </div>
-        
-        <!-- Animated Orbs for elegant background depth -->
-        <div class="absolute top-1/4 left-1/4 w-[50vw] h-[50vw] bg-brand-primary/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-glow z-0"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-[40vw] h-[40vw] bg-brand-sand/15 rounded-full blur-[100px] mix-blend-screen animate-float-slow z-0"></div>
-        
-        <!-- Architectural Lines -->
-        <div class="absolute left-8 md:left-24 top-0 w-px h-full bg-gradient-to-b from-transparent via-brand-sand/30 to-transparent z-10"></div>
-        <div class="absolute right-8 md:right-24 top-0 w-px h-full bg-gradient-to-b from-transparent via-brand-sand/30 to-transparent z-10"></div>
-        <div class="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-sand/20 to-transparent z-10 hidden md:block"></div>
+    <!-- Hero Section (Luxurious, Minimal & Chic) -->
+    <section class="relative min-h-[92svh] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden bg-brand-alabaster">
 
-        <!-- Decorative Spinning Element -->
-        <div class="absolute top-32 right-12 md:right-32 z-10 animate-spin-slow opacity-40">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D4C3B3" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
-        </div>
+        <!-- Soft warm tonal wash -->
+        <div class="absolute inset-0 z-0 bg-gradient-to-b from-brand-alabaster via-brand-alabaster to-brand-bone/60"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[80vw] h-[60vw] max-w-[1100px] bg-brand-sand/25 rounded-full blur-[140px] z-0"></div>
 
-        <div class="relative z-20 text-center px-6 max-w-4xl mx-auto reveal mt-12">
-            <!-- Small luxury tag -->
-            <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-brand-sand/30 bg-brand-mocha/40 backdrop-blur-md text-brand-sand text-xs font-bold tracking-[0.2em] mb-12 uppercase shadow-glass transform hover:scale-105 transition-transform">
-                <span class="w-1.5 h-1.5 rounded-full bg-brand-sand animate-ping"></span>
-                Ιδιωτικο Γραφειο Ψυχολογιας
+        <!-- Thin framing border for a refined, gallery-like feel -->
+        <div class="absolute inset-5 md:inset-10 border border-brand-primary/15 pointer-events-none z-10"></div>
+
+        <div class="relative z-20 text-center px-8 max-w-3xl mx-auto reveal active">
+
+            <!-- Minimal kicker with hairline rules -->
+            <div class="flex items-center justify-center gap-5 mb-10">
+                <span class="w-10 md:w-16 h-px bg-brand-primary/40"></span>
+                <span class="text-brand-primary text-[0.7rem] md:text-xs font-medium tracking-[0.35em] uppercase">Ιδιωτικό Γραφείο Ψυχολογίας</span>
+                <span class="w-10 md:w-16 h-px bg-brand-primary/40"></span>
             </div>
 
-            <!-- Clean, elegant typography -->
-            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight tracking-[0.1em] drop-shadow-xl">
-                Βασιλική Στεργιοπούλου
+            <!-- Elegant serif headline -->
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-[5.5rem] text-brand-dark mb-6 leading-[1.05] font-light">
+                Βασιλική<br><span class="italic text-brand-primary">Στεργιοπούλου</span>
             </h1>
-            <h2 class="font-serif text-2xl md:text-3xl text-brand-sand italic mb-12 font-light tracking-widest drop-shadow-md">
-                Κλινική Ψυχολόγος & Ομαδική Αναλύτρια
-            </h2>
-            
-            <div class="w-px h-24 bg-gradient-to-b from-brand-sand to-transparent mx-auto mb-12"></div>
 
-            <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 bg-transparent border border-brand-sand text-brand-sand rounded-full font-bold tracking-[0.15em] text-xs uppercase hover:bg-brand-sand hover:text-brand-dark transition-all duration-500 shadow-glow group">
-                Ξεκινηστε Σημερα
+            <!-- Refined gold divider -->
+            <div class="flex items-center justify-center gap-3 my-10">
+                <span class="w-1.5 h-1.5 rotate-45 bg-brand-primary/60"></span>
+                <span class="w-24 h-px bg-gradient-to-r from-transparent via-brand-primary/50 to-transparent"></span>
+                <span class="w-1.5 h-1.5 rotate-45 bg-brand-primary/60"></span>
+            </div>
+
+            <h2 class="font-sans text-sm md:text-base text-brand-text/80 mb-14 font-light tracking-[0.25em] uppercase">
+                Κλινική Ψυχολόγος &amp; Ομαδική Αναλύτρια
+            </h2>
+
+            <a href="#contact" class="inline-flex items-center justify-center px-12 py-4 bg-brand-dark text-brand-alabaster rounded-full font-medium tracking-[0.2em] text-xs uppercase btn-luxury group">
+                Ξεκινήστε Σήμερα
                 <i data-lucide="arrow-right" class="w-4 h-4 ml-3 group-hover:translate-x-1 transition-transform"></i>
             </a>
         </div>
 
         <!-- Scroll Indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-            <i data-lucide="chevron-down" class="w-6 h-6 text-brand-sand/70"></i>
+            <i data-lucide="chevron-down" class="w-6 h-6 text-brand-primary/60"></i>
         </div>
     </section>
 
@@ -411,8 +410,8 @@
     <!-- FAQ Section (Standard Dropdown) -->
     <section id="faq" class="py-32 px-6 bg-white relative border-b border-brand-bone">
         <div class="max-w-4xl mx-auto">
-            
-            <div class="text-center reveal mb-16">
+
+            <div class="text-center mb-16">
                 <div class="flex items-center justify-center gap-4 mb-6">
                     <div class="w-12 h-px bg-brand-primary"></div>
                     <span class="text-brand-primary font-bold tracking-[0.2em] text-xs uppercase">Συχνες Ερωτησεις</span>
@@ -424,68 +423,60 @@
 
             <div class="space-y-4">
                 <!-- FAQ Item 1 -->
-                <div class="faq-item border-b border-brand-bone group reveal">
-                    <button class="faq-btn w-full py-6 text-left flex justify-between items-center bg-transparent focus:outline-none cursor-pointer">
+                <details class="faq-box border-b border-brand-bone group">
+                    <summary class="py-6 flex justify-between items-center cursor-pointer list-none gap-4">
                         <div class="flex items-center gap-4 md:gap-6 pr-4">
-                            <span class="text-brand-sand font-display text-xl md:text-2xl group-hover:text-brand-primary transition-colors">01</span>
-                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Ποια είναι η διαφορά της ατομικής από την ομαδική ψυχοθεραπεία;</span>
+                            <span class="text-brand-sand font-display text-xl md:text-2xl">01</span>
+                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark">Ποια είναι η διαφορά της ατομικής από την ομαδική ψυχοθεραπεία;</span>
                         </div>
-                        <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                        <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
-                            Η ατομική θεραπεία είναι πιο στοχευμένη και επικεντρώνεται αποκλειστικά στη δική σας ιστορία. Η ομαδική θεραπεία λειτουργεί ως μικρόκοσμος της κοινωνίας, όπου μέσω της αλληλεπίδρασης με άλλους, χτίζετε διαπροσωπικές δεξιότητες και σπάτε την απομόνωση.
-                        </div>
+                        <i data-lucide="chevron-down" class="faq-chevron w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
+                        Η ατομική θεραπεία είναι πιο στοχευμένη και επικεντρώνεται αποκλειστικά στη δική σας ιστορία. Η ομαδική θεραπεία λειτουργεί ως μικρόκοσμος της κοινωνίας, όπου μέσω της αλληλεπίδρασης με άλλους, χτίζετε διαπροσωπικές δεξιότητες και σπάτε την απομόνωση.
                     </div>
-                </div>
+                </details>
 
                 <!-- FAQ Item 2 -->
-                <div class="faq-item border-b border-brand-bone group reveal reveal-delay-1">
-                    <button class="faq-btn w-full py-6 text-left flex justify-between items-center bg-transparent focus:outline-none cursor-pointer">
+                <details class="faq-box border-b border-brand-bone group">
+                    <summary class="py-6 flex justify-between items-center cursor-pointer list-none gap-4">
                         <div class="flex items-center gap-4 md:gap-6 pr-4">
-                            <span class="text-brand-sand font-display text-xl md:text-2xl group-hover:text-brand-primary transition-colors">02</span>
-                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Παρέχονται συνεδρίες εξ αποστάσεως (online);</span>
+                            <span class="text-brand-sand font-display text-xl md:text-2xl">02</span>
+                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark">Παρέχονται συνεδρίες εξ αποστάσεως (online);</span>
                         </div>
-                        <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                        <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
-                            Ναι, οι δυαδικές συνεδρίες μπορούν να πραγματοποιηθούν και διαδικτυακά, με την ίδια τήρηση του απορρήτου, τον ίδιο επαγγελματισμό και τη ζεστασιά μιας διά ζώσης συνεδρίας.
-                        </div>
+                        <i data-lucide="chevron-down" class="faq-chevron w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
+                        Ναι, οι δυαδικές συνεδρίες μπορούν να πραγματοποιηθούν και διαδικτυακά, με την ίδια τήρηση του απορρήτου, τον ίδιο επαγγελματισμό και τη ζεστασιά μιας διά ζώσης συνεδρίας.
                     </div>
-                </div>
+                </details>
 
                 <!-- FAQ Item 3 -->
-                <div class="faq-item border-b border-brand-bone group reveal reveal-delay-2">
-                    <button class="faq-btn w-full py-6 text-left flex justify-between items-center bg-transparent focus:outline-none cursor-pointer">
+                <details class="faq-box border-b border-brand-bone group">
+                    <summary class="py-6 flex justify-between items-center cursor-pointer list-none gap-4">
                         <div class="flex items-center gap-4 md:gap-6 pr-4">
-                            <span class="text-brand-sand font-display text-xl md:text-2xl group-hover:text-brand-primary transition-colors">03</span>
-                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Τι θα συμβεί στην πρώτη μας συνεδρία;</span>
+                            <span class="text-brand-sand font-display text-xl md:text-2xl">03</span>
+                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark">Τι θα συμβεί στην πρώτη μας συνεδρία;</span>
                         </div>
-                        <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                        <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
-                            Η πρώτη συνεδρία είναι κυρίως αναγνωριστική. Θα δημιουργήσουμε έναν ασφαλή χώρο χωρίς καμία κριτική, για να ακούσω τους λόγους που σας οδήγησαν εδώ, να κατανοήσω το αίτημά σας και να συζητήσουμε από κοινού το θεραπευτικό πλάνο.
-                        </div>
+                        <i data-lucide="chevron-down" class="faq-chevron w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
+                        Η πρώτη συνεδρία είναι κυρίως αναγνωριστική. Θα δημιουργήσουμε έναν ασφαλή χώρο χωρίς καμία κριτική, για να ακούσω τους λόγους που σας οδήγησαν εδώ, να κατανοήσω το αίτημά σας και να συζητήσουμε από κοινού το θεραπευτικό πλάνο.
                     </div>
-                </div>
+                </details>
 
                 <!-- FAQ Item 4 -->
-                <div class="faq-item border-b border-brand-bone group reveal reveal-delay-3">
-                    <button class="faq-btn w-full py-6 text-left flex justify-between items-center bg-transparent focus:outline-none cursor-pointer">
+                <details class="faq-box border-b border-brand-bone group">
+                    <summary class="py-6 flex justify-between items-center cursor-pointer list-none gap-4">
                         <div class="flex items-center gap-4 md:gap-6 pr-4">
-                            <span class="text-brand-sand font-display text-xl md:text-2xl group-hover:text-brand-primary transition-colors">04</span>
-                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Μπορώ να κάνω ψυχοθεραπεία αν δεν έχω κλινική διαταραχή;</span>
+                            <span class="text-brand-sand font-display text-xl md:text-2xl">04</span>
+                            <span class="font-serif text-lg md:text-xl font-bold text-brand-dark">Μπορώ να κάνω ψυχοθεραπεία αν δεν έχω κλινική διαταραχή;</span>
                         </div>
-                        <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                        <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
-                            Φυσικά. Η ψυχοθεραπεία δεν απευθύνεται μόνο σε ανθρώπους με κλινικά συμπτώματα. Είναι ένα εξαιρετικό εργαλείο για την προσωπική ανάπτυξη, τη βελτίωση των σχέσεων, την αυτογνωσία και τη θέσπιση υγιών ορίων στη ζωή.
-                        </div>
+                        <i data-lucide="chevron-down" class="faq-chevron w-6 h-6 text-brand-primary shrink-0 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="pl-12 md:pl-16 pb-6 text-brand-text font-light leading-relaxed text-sm md:text-base">
+                        Φυσικά. Η ψυχοθεραπεία δεν απευθύνεται μόνο σε ανθρώπους με κλινικά συμπτώματα. Είναι ένα εξαιρετικό εργαλείο για την προσωπική ανάπτυξη, τη βελτίωση των σχέσεων, την αυτογνωσία και τη θέσπιση υγιών ορίων στη ζωή.
                     </div>
-                </div>
+                </details>
             </div>
         </div>
     </section>
@@ -904,31 +895,7 @@
             observer.observe(el);
         });
 
-        // 5. Standard FAQ Accordion Logic
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const btn = item.querySelector('.faq-btn');
-            const answer = item.querySelector('.faq-answer');
-            const icon = item.querySelector('.faq-icon');
-            
-            btn.addEventListener('click', () => {
-                const isOpen = item.classList.contains('active');
-                
-                // Close all
-                faqItems.forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                    otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
-                });
-                
-                // Toggle current
-                if (!isOpen) {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                    icon.style.transform = 'rotate(180deg)';
-                }
-            });
-        });
+        // 5. FAQ uses native <details> dropdowns — no JS required.
 
         // 6. Lightbox functionality
         const lightbox = document.getElementById('lightbox');
