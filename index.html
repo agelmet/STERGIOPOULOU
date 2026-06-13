@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Βασιλική Στεργιοπούλου | Κλινική Ψυχολόγος & Ομαδική Αναλύτρια</title>
-    <meta name="description" content="Η Βασιλική Στεργιοπούλου είναι αδειούχος Κλινική Ψυχολόγος με ιδιωτικό γραφείο στην Κυψέλη. Εξειδίκευση σε άγχος, κατάθλιψη, ομαδική ανάλυση και ψυχοθεραπεία εφήβων.">
-    <meta name="keywords" content="Ψυχολόγος Κυψέλη, Κλινική Ψυχολόγος, Ομαδική Ψυχοθεραπεία, Βασιλική Στεργιοπούλου, Άγχος, Κατάθλιψη, Ψυχοθεραπεία Εφήβων">
+    <meta name="description" content="Η Βασιλική Στεργιοπούλου είναι αδειούχος Κλινική Ψυχολόγος με ιδιωτικό γραφείο στην Κυψέλη. Εξειδίκευση σε άγχος, κατάθλιψη, ομαδική ανάλυση και ψυχοθεραπεία.">
+    <meta name="keywords" content="Ψυχολόγος Κυψέλη, Κλινική Ψυχολόγος, Ομαδική Ψυχοθεραπεία, Βασιλική Στεργιοπούλου, Άγχος, Κατάθλιψη">
     <meta name="author" content="Advon Media">
     <meta name="robots" content="index, follow">
 
-    <!-- Favicon -->
+    <!-- Favicon updated per request -->
     <link rel="icon" href="https://cdn.doctoranytime.gr/profileimages/31e00517-7305-49b2-a013-b0b9234225ce.jpg" type="image/jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,9 +25,9 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#1C1814',      // Deep Espresso
-                            mocha: '#3A2E26',     // Rich Mocha
-                            primary: '#8C6F56',   // Muted Bronze/Brown
+                            dark: '#4A5839',      // Warm, soft Olive Green (Χρώμα της ελιάς)
+                            mocha: '#38432A',     // Deeper Olive for contrast
+                            primary: '#8C6F56',   // Muted Bronze/Brown accent
                             sand: '#D4C3B3',      // Warm Sand
                             alabaster: '#F7F5F0', // Soft off-white
                             bone: '#EAE5DB',      // Slightly darker off-white for borders
@@ -40,20 +40,16 @@
                         display: ['Cinzel', 'serif'],
                     },
                     boxShadow: {
-                        'glass': '0 8px 32px 0 rgba(28, 24, 20, 0.1)',
-                        'float': '0 30px 60px -20px rgba(28, 24, 20, 0.2)',
-                        'glow': '0 0 50px -10px rgba(140, 111, 86, 0.5)',
+                        'glass': '0 8px 32px 0 rgba(74, 88, 57, 0.1)',
+                        'float': '0 30px 60px -20px rgba(74, 88, 57, 0.2)',
+                        'glow': '0 0 50px -10px rgba(140, 111, 86, 0.4)',
                     },
                     animation: {
-                        'kenburns': 'kenburns 30s ease-out infinite alternate',
                         'marquee': 'marquee 50s linear infinite',
                         'float-slow': 'float 8s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
-                        kenburns: {
-                            '0%': { transform: 'scale(1) translate(0, 0)' },
-                            '100%': { transform: 'scale(1.1) translate(-1%, -1%)' },
-                        },
                         marquee: {
                             '0%': { transform: 'translateX(0%)' },
                             '100%': { transform: 'translateX(-50%)' },
@@ -61,6 +57,10 @@
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-15px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.6, filter: 'brightness(1)' },
+                            '50%': { opacity: 0.9, filter: 'brightness(1.2)' },
                         }
                     }
                 }
@@ -73,7 +73,7 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #F7F5F0; }
         ::-webkit-scrollbar-thumb { background: #8C6F56; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #3A2E26; }
+        ::-webkit-scrollbar-thumb:hover { background: #4A5839; }
 
         body { background-color: #F7F5F0; color: #4A4036; }
 
@@ -93,10 +93,10 @@
         }
         
         .glass-panel-dark {
-            background: rgba(28, 24, 20, 0.7);
+            background: rgba(74, 88, 57, 0.5); /* Olive glass */
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(212, 195, 179, 0.15);
+            border: 1px solid rgba(212, 195, 179, 0.2);
         }
 
         /* Moving Portrait Effect */
@@ -142,13 +142,13 @@
         }
         .service-card:hover::after { opacity: 1; transform: scale(1); }
 
-        /* Independent FAQ Accordion CSS - Robust Max-Height Approach */
+        /* Independent FAQ Accordion CSS - Fixed */
         .faq-answer-wrapper {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: max-height 0.4s ease-out;
         }
-        .faq-icon { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .faq-icon { transition: transform 0.4s ease-out; }
         .faq-item.active .faq-icon { transform: rotate(135deg); }
     </style>
 
@@ -168,11 +168,11 @@
                 </a>
                 
                 <div class="hidden lg:flex items-center space-x-10">
-                    <a href="#about" class="text-xs font-bold tracking-[0.15em] text-brand-mocha hover:text-brand-primary transition-colors uppercase">Προφιλ</a>
-                    <a href="#services" class="text-xs font-bold tracking-[0.15em] text-brand-mocha hover:text-brand-primary transition-colors uppercase">Υπηρεσιες</a>
-                    <a href="#philosophy" class="text-xs font-bold tracking-[0.15em] text-brand-mocha hover:text-brand-primary transition-colors uppercase">Φιλοσοφια</a>
-                    <a href="#space" class="text-xs font-bold tracking-[0.15em] text-brand-mocha hover:text-brand-primary transition-colors uppercase">Ο Χωρος</a>
-                    <a href="#faq" class="text-xs font-bold tracking-[0.15em] text-brand-mocha hover:text-brand-primary transition-colors uppercase">Συχνες Ερωτησεις</a>
+                    <a href="#about" class="text-xs font-bold tracking-[0.15em] text-brand-dark hover:text-brand-primary transition-colors uppercase">Προφιλ</a>
+                    <a href="#services" class="text-xs font-bold tracking-[0.15em] text-brand-dark hover:text-brand-primary transition-colors uppercase">Υπηρεσιες</a>
+                    <a href="#philosophy" class="text-xs font-bold tracking-[0.15em] text-brand-dark hover:text-brand-primary transition-colors uppercase">Φιλοσοφια</a>
+                    <a href="#space" class="text-xs font-bold tracking-[0.15em] text-brand-dark hover:text-brand-primary transition-colors uppercase">Ο Χωρος</a>
+                    <a href="#faq" class="text-xs font-bold tracking-[0.15em] text-brand-dark hover:text-brand-primary transition-colors uppercase">FAQ</a>
                     <a href="#contact" class="px-8 py-3 bg-brand-dark text-white rounded-full text-xs font-bold tracking-[0.15em] uppercase transition-all duration-300 btn-luxury">
                         Ραντεβου
                     </a>
@@ -198,37 +198,30 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative h-[100svh] flex items-center justify-center overflow-hidden bg-brand-dark">
-        <!-- Parallax Background (Highly visible) -->
-        <div class="absolute inset-0 z-0">
-            <div class="w-full h-full bg-cover bg-center bg-no-repeat animate-kenburns opacity-100" style="background-image: url('https://cdn.doctoranytime.gr/practices/98b16f33-0fec-478d-8a86-b966a526230c.jpg');"></div>
-        </div>
+    <!-- Hero Section (Clean Typographic Olive Background) -->
+    <section class="relative h-[80svh] lg:h-[100svh] flex items-center justify-center overflow-hidden bg-brand-dark">
         
-        <!-- Refined Subtle Overlays so the image shines through beautifully -->
-        <div class="absolute inset-0 bg-brand-dark/30 z-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-transparent to-brand-dark/90 z-10"></div>
-        
+        <!-- Animated Orbs for elegant background depth without an image -->
+        <div class="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-brand-primary/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-glow z-10"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vw] bg-brand-sand/15 rounded-full blur-[100px] mix-blend-screen animate-float-slow z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-mocha to-transparent opacity-60 z-10"></div>
+
         <div class="relative z-20 text-center px-6 max-w-4xl mx-auto mt-20 reveal">
             <!-- Small luxury tag -->
-            <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full glass-panel-dark text-white text-xs font-bold tracking-[0.2em] mb-10 border border-white/20 uppercase shadow-glass">
+            <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full glass-panel-dark text-white text-xs font-bold tracking-[0.2em] mb-12 border border-white/20 uppercase shadow-glass">
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-sand animate-pulse"></span>
                 Ιδιωτικο Γραφειο Ψυχολογιας
             </div>
 
-            <!-- Scaled down typography for a more elegant, editorial look -->
-            <h1 class="font-display text-3xl md:text-5xl lg:text-5xl text-white mb-4 leading-tight tracking-[0.1em] drop-shadow-xl">
+            <!-- Clean, elegant typography -->
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight tracking-[0.1em] drop-shadow-xl">
                 Βασιλική Στεργιοπούλου
             </h1>
-            <h2 class="font-serif text-xl md:text-2xl text-brand-sand italic mb-10 font-light tracking-widest drop-shadow-md">
+            <h2 class="font-serif text-2xl md:text-3xl text-brand-sand italic mb-12 font-light tracking-widest drop-shadow-md">
                 Κλινική Ψυχολόγος & Ομαδική Αναλύτρια
             </h2>
             
-            <div class="w-px h-24 bg-gradient-to-b from-brand-sand to-transparent mx-auto mb-10"></div>
-            
-            <p class="text-base md:text-lg text-white font-sans font-light max-w-2xl mx-auto leading-relaxed mb-12 opacity-95 drop-shadow-md">
-                Η επιστήμη συναντά την ενσυναίσθηση. Ανακαλύψτε τη δύναμη της σύνδεσης και της αποδοχής μέσα από την ατομική και ομαδική ψυχοθεραπεία.
-            </p>
+            <div class="w-px h-24 bg-gradient-to-b from-brand-sand to-transparent mx-auto mb-12"></div>
 
             <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 bg-brand-sand/10 backdrop-blur-md border border-brand-sand text-white rounded-full font-bold tracking-[0.15em] text-xs uppercase hover:bg-brand-sand hover:text-brand-dark transition-all duration-500 shadow-glow group">
                 Ξεκινηστε Σημερα
@@ -238,7 +231,7 @@
 
         <!-- Scroll Indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-            <i data-lucide="chevron-down" class="w-6 h-6 text-white/50"></i>
+            <i data-lucide="chevron-down" class="w-6 h-6 text-brand-sand/70"></i>
         </div>
     </section>
 
@@ -249,41 +242,38 @@
             <!-- Dynamic Portrait Layout -->
             <div class="lg:col-span-5 relative reveal">
                 <div class="relative z-10 portrait-container aspect-[3/4] shadow-float border border-brand-bone bg-white p-2">
-                    <img src="https://cdn.doctoranytime.gr/profileimages/31e00517-7305-49b2-a013-b0b9234225ce.jpg" alt="Βασιλική Στεργιοπούλου Κλινική Ψυχολόγος" class="w-full h-full object-cover rounded-lg">
+                    <img src="https://raw.githubusercontent.com/agelmet/STERGIOPOULOU/refs/heads/main/stergiop.jpg" alt="Βασιλική Στεργιοπούλου" class="w-full h-full object-cover rounded-lg">
                 </div>
                 <!-- Decorative geometry -->
                 <div class="absolute -bottom-10 -right-10 w-full h-full border border-brand-primary/20 rounded-xl z-0"></div>
                 <div class="absolute -top-10 -left-10 w-32 h-32 bg-brand-sand/30 rounded-full blur-2xl z-0"></div>
             </div>
 
-            <!-- Bio -->
+            <!-- Bio Text -->
             <div class="lg:col-span-7 reveal reveal-delay-1 lg:pl-10">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-12 h-px bg-brand-primary"></div>
-                    <span class="text-brand-primary font-bold tracking-[0.2em] text-xs uppercase">Προφιλ Θεραπευτριας</span>
+                    <span class="text-brand-primary font-bold tracking-[0.2em] text-xs uppercase">Σχετικα με εμενα</span>
                 </div>
                 
                 <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mb-10 leading-tight">Επιστημονική Αρτιότητα & <br><span class="italic text-brand-primary">Βαθιά Ενσυναίσθηση</span></h2>
                 
                 <div class="space-y-6 text-brand-text leading-relaxed font-light text-lg">
                     <p>
-                        Η <strong>Βασιλική Στεργιοπούλου</strong> είναι αδειούχος Κλινική Ψυχολόγος (Αρ. Αδείας: 4175/07-01-2019), διατηρώντας το ιδιωτικό της γραφείο στην Κυψέλη. Μετά την αποφοίτησή της από το τμήμα Ψυχολογίας του Πανεπιστημίου Κρήτης, ολοκλήρωσε τις μεταπτυχιακές της σπουδές (MSc) στην Κλινική Ψυχολογία στο διακεκριμένο <strong>Utrecht University</strong> της Ολλανδίας.
+                        Είμαι η Βασιλική Στεργιοπούλου, αδειούχος Κλινική Ψυχολόγος και Ψυχοθεραπεύτρια. Σπούδασα Ψυχολογία στο Πανεπιστήμιο Κρήτης και ολοκλήρωσα τις μεταπτυχιακές σπουδές μου στην Κλινική Ψυχολογία στο Utrecht University της Ολλανδίας.
                     </p>
                     <p>
-                        Εξειδικεύτηκε στην Ομαδική Ανάλυση (Ινστιτούτο Ομαδικής Ανάλυσης Αθηνών), όπου και δραστηριοποιείται ενεργά ως Ψυχοθεραπεύτρια και Συντονίστρια Ομάδων. 
+                        Επιστρέφοντας στη Ελλάδα, εκπαιδεύτηκα στην Ομαδική Ανάλυση στο Ινστιτούτο Ομαδικής Ανάλυσης Αθηνών, μια ψυχοθεραπευτική προσέγγιση που εξετάζει πώς οι κοινωνικές εμπειρίες και οι σχέσεις μας διαμορφώνουν τον τρόπο που σχετιζόμαστε με τον εαυτό μας και τους άλλους.
                     </p>
-                    <blockquote class="border-l-2 border-brand-primary pl-4 md:pl-6 py-2 my-8 font-serif text-lg md:text-2xl italic text-brand-mocha">
-                        "Η κλινική ματιά έχει σφυρηλατηθεί στα πιο απαιτητικά περιβάλλοντα, μετατρέποντας τη θεωρία σε άμεση, ουσιαστική πράξη."
-                    </blockquote>
                     <p>
-                        Έχει εργαστεί ως Κλινική Ψυχολόγος στις γραμμές άμεσης βοήθειας (197) και παιδικής προστασίας (1107) του Ε.Κ.Κ.Α., αντιμετωπίζοντας κρίσεις σε πραγματικό χρόνο, ενώ παρείχε εθελοντικά στήριξη στην «ΕΠΑΝΟΔΟ». Είτε μέσω ατομικής είτε ομαδικής ψυχοθεραπείας, βοηθά τους ανθρώπους να χτίσουν ουσιαστικές σχέσεις και βαθιά ψυχική ανθεκτικότητα.
+                        Έχω εργαστεί σε υπηρεσίες ψυχικής υγείας, υποστηρίζοντας ανθρώπους που αντιμετωπίζουν προσωπικές δυσκολίες, κρίσεις και σημαντικές μεταβάσεις στη ζωή τους. Στη θεραπευτική μου δουλειά δίνω έμφαση στη δημιουργία μιας σχέσης εμπιστοσύνης και ασφάλειας, όπου το άτομο μπορεί να επεξεργαστεί τις δυσκολίες του και να προχωρήσει σε ουσιαστικές αλλαγές.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Services Section -->
+    <!-- Services Section -->
     <section id="services" class="py-32 px-6 bg-brand-dark relative text-white">
         <!-- Abstract Shapes -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -303,65 +293,51 @@
                 <p class="text-brand-bone font-light max-w-sm pb-2">Δομημένες θεραπευτικές προσεγγίσεις προσαρμοσμένες στις δικές σας μοναδικές ανάγκες.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Updated to 3 columns since there are 3 services -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
                 <!-- Service 01 -->
-                <div class="glass-panel-dark p-10 md:p-14 rounded-[2rem] group service-card reveal">
+                <div class="glass-panel-dark p-10 md:p-12 rounded-[2rem] group service-card reveal">
                     <div class="flex justify-between items-start mb-8">
-                        <div class="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
-                            <i data-lucide="users" class="w-8 h-8"></i>
+                        <div class="w-14 h-14 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
+                            <i data-lucide="users" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-6xl font-display font-light text-white/5 group-hover:text-brand-primary/20 transition-colors duration-500">01</span>
+                        <span class="text-5xl font-display font-light text-white/10 group-hover:text-brand-primary/30 transition-colors duration-500">01</span>
                     </div>
-                    <h3 class="text-3xl font-serif mb-3">Ομαδική Ψυχοθεραπεία</h3>
-                    <div class="mb-6 text-xs font-bold tracking-[0.2em] text-brand-primary uppercase">Group Therapy - 90'</div>
-                    <p class="text-brand-bone font-light leading-relaxed">
-                        Η ομάδα λειτουργεί ως ένας ασφαλής "μικρόκοσμος" της κοινωνίας. Ο πιο ισχυρός τρόπος για να σπάσετε την απομόνωση, να βελτιώσετε τις διαπροσωπικές σας σχέσεις και να συνειδητοποιήσετε πως δεν είστε μόνοι.
+                    <h3 class="text-2xl font-serif mb-3">Ομαδική Ψυχοθεραπεία</h3>
+                    <div class="mb-6 w-8 h-px bg-brand-primary"></div>
+                    <p class="text-brand-bone font-light leading-relaxed text-sm">
+                        Η ομάδα λειτουργεί ως ένα ασφαλές πλαίσιο, ένα είδος «μικρογραφίας» των σχέσεων και της κοινωνικής εμπειρίας. Μέσα σε αυτή τη συνθήκη, τα μέλη έχουν τη δυνατότητα να παρατηρήσουν τον τρόπο που σχετίζονται με τους άλλους, να επεξεργαστούν δυσκολίες στις διαπροσωπικές σχέσεις και να αναγνωρίσουν ότι πολλές εμπειρίες είναι κοινές.
                     </p>
                 </div>
 
                 <!-- Service 02 -->
-                <div class="glass-panel-dark p-10 md:p-14 rounded-[2rem] group service-card reveal reveal-delay-1">
+                <div class="glass-panel-dark p-10 md:p-12 rounded-[2rem] group service-card reveal reveal-delay-1">
                     <div class="flex justify-between items-start mb-8">
-                        <div class="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
-                            <i data-lucide="brain" class="w-8 h-8"></i>
+                        <div class="w-14 h-14 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
+                            <i data-lucide="user" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-6xl font-display font-light text-white/5 group-hover:text-brand-primary/20 transition-colors duration-500">02</span>
+                        <span class="text-5xl font-display font-light text-white/10 group-hover:text-brand-primary/30 transition-colors duration-500">02</span>
                     </div>
-                    <h3 class="text-3xl font-serif mb-3">Κλινική Ψυχολογία</h3>
-                    <div class="mb-6 text-xs font-bold tracking-[0.2em] text-brand-primary uppercase">Αγχος, Πανικος, Καταθλιψη - 60'</div>
-                    <p class="text-brand-bone font-light leading-relaxed">
-                        Στις ατομικές συνεδρίες, αντιμετωπίζουμε κλινικές προκλήσεις όπως οι κρίσεις πανικού, οι ειδικές φοβίες, οι ιδεοψυχαναγκασμοί (OCD) και η κατάθλιψη, συνδυάζοντας την κλινική γνώση με τη βαθιά ενσυναίσθηση.
+                    <h3 class="text-2xl font-serif mb-3">Δυαδικές Συνεδρίες</h3>
+                    <div class="mb-6 w-8 h-px bg-brand-primary"></div>
+                    <p class="text-brand-bone font-light leading-relaxed text-sm">
+                        Προσφέρουν ένα σταθερό θεραπευτικό πλαίσιο, μέσα στο οποίο ο θεραπευόμενος μπορεί να επεξεργαστεί προσωπικές δυσκολίες, συναισθηματικές εμπειρίες και θέματα που σχετίζονται με τον τρόπο που σχετίζεται με τους άλλους. Η θεραπευτική σχέση λειτουργεί υποστηρικτικά και ως προετοιμασία για τη συμμετοχή σε ομαδικό πλαίσιο.
                     </p>
                 </div>
 
                 <!-- Service 03 -->
-                <div class="glass-panel-dark p-10 md:p-14 rounded-[2rem] group service-card reveal">
+                <div class="glass-panel-dark p-10 md:p-12 rounded-[2rem] group service-card reveal reveal-delay-2">
                     <div class="flex justify-between items-start mb-8">
-                        <div class="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
-                            <i data-lucide="sprout" class="w-8 h-8"></i>
+                        <div class="w-14 h-14 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
+                            <i data-lucide="laptop" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-6xl font-display font-light text-white/5 group-hover:text-brand-primary/20 transition-colors duration-500">03</span>
+                        <span class="text-5xl font-display font-light text-white/10 group-hover:text-brand-primary/30 transition-colors duration-500">03</span>
                     </div>
-                    <h3 class="text-3xl font-serif mb-3">Εφήβων & Παιδιών</h3>
-                    <div class="mb-6 text-xs font-bold tracking-[0.2em] text-brand-primary uppercase">Προσωπικη Αναπτυξη - 60'</div>
-                    <p class="text-brand-bone font-light leading-relaxed">
-                        Αξιοποιώντας την κλινική εμπειρία ως συντονίστρια ομάδων παιδιών και εφήβων, παρέχεται εξειδικευμένη υποστήριξη. Παράλληλα, καθοδηγούνται ενήλικες που αναζητούν την προσωπική τους ανάπτυξη και επίλυση συγκρούσεων.
-                    </p>
-                </div>
-
-                <!-- Service 04 -->
-                <div class="glass-panel-dark p-10 md:p-14 rounded-[2rem] group service-card reveal reveal-delay-1">
-                    <div class="flex justify-between items-start mb-8">
-                        <div class="w-16 h-16 rounded-full border border-brand-primary flex items-center justify-center text-brand-sand group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
-                            <i data-lucide="laptop" class="w-8 h-8"></i>
-                        </div>
-                        <span class="text-6xl font-display font-light text-white/5 group-hover:text-brand-primary/20 transition-colors duration-500">04</span>
-                    </div>
-                    <h3 class="text-3xl font-serif mb-3">Online Συνεδρίες</h3>
-                    <div class="mb-6 text-xs font-bold tracking-[0.2em] text-brand-primary uppercase">Διαδικτυακη Ψυχοθεραπεια</div>
-                    <p class="text-brand-bone font-light leading-relaxed">
-                        Αναγνωρίζοντας τις σύγχρονες ανάγκες, οι ατομικές υπηρεσίες παρέχονται και διαδικτυακά με την ίδια αυστηρή τήρηση του απορρήτου και την ίδια θεραπευτική ζεστασιά, από την ασφάλεια του σπιτιού σας.
+                    <h3 class="text-2xl font-serif mb-3">Online Συνεδρίες</h3>
+                    <div class="mb-6 w-8 h-px bg-brand-primary"></div>
+                    <p class="text-brand-bone font-light leading-relaxed text-sm">
+                        Οι δυαδικές συνεδρίες μπορούν να πραγματοποιηθούν και διαδικτυακά, με την ίδια τήρηση του απορρήτου. Παρότι η δια ζώσης συνάντηση αποτελεί την προτιμώμενη μορφή, η διαδικτυακή θεραπεία μπορεί να λειτουργήσει υποστηρικτικά όταν υπάρχει ανάγκη, διατηρώντας ακέραιη τη θεραπευτική σχέση.
                     </p>
                 </div>
 
@@ -369,53 +345,52 @@
         </div>
     </section>
 
-    <!-- Philosophy Section -->
+    <!-- Philosophy Section (No Images) -->
     <section id="philosophy" class="py-32 px-6 bg-brand-alabaster relative border-b border-brand-bone">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div class="max-w-4xl mx-auto">
             
-            <div class="order-2 lg:order-1 relative reveal h-[600px]">
-                <div class="absolute inset-0 bg-brand-primary/10 transform -rotate-3 rounded-[2rem]"></div>
-                <img src="https://cdn.doctoranytime.gr/practices/a5d31012-522d-43b4-9eaa-730fdc000c13.jpg" alt="Φιλοσοφία" class="absolute inset-0 w-full h-full object-cover rounded-[2rem] shadow-float border border-brand-bone transform transition-transform duration-700 hover:rotate-0">
-            </div>
-
-            <div class="order-1 lg:order-2 reveal lg:pl-8">
-                <div class="flex items-center gap-4 mb-6">
+            <div class="text-center reveal mb-16">
+                <div class="flex items-center justify-center gap-4 mb-6">
                     <div class="w-12 h-px bg-brand-primary"></div>
                     <span class="text-brand-primary font-bold tracking-[0.2em] text-xs uppercase">Ο Χαρτης Αξιων</span>
+                    <div class="w-12 h-px bg-brand-primary"></div>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mb-8 leading-tight">Η Θεραπευτική Φιλοσοφία</h2>
-                
-                <p class="text-brand-text font-light text-lg mb-10">
-                    Ένας χώρος όπου η επιστήμη συναντά την απόλυτη ανθρώπινη αποδοχή. Η πρακτική στηρίζεται σε 4 βασικούς πυλώνες:
+                <p class="text-brand-text font-light text-lg mb-10 max-w-2xl mx-auto">
+                    Ένας χώρος όπου η επιστήμη συναντά την απόλυτη ανθρώπινη αποδοχή. Η πρακτική στηρίζεται σε τρεις βασικούς άξονες:
                 </p>
+            </div>
 
-                <div class="space-y-8">
-                    <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-brand-primary before:rounded-full">
-                        <h4 class="text-xl font-serif font-bold text-brand-dark mb-2">Κλινική Αρτιότητα (Utrecht University)</h4>
-                        <p class="text-brand-text font-light text-sm leading-relaxed">Οι μεταπτυχιακές σπουδές στην Ολλανδία προσφέρουν γερές βάσεις. Δεν βλέπω απλώς το "σύμπτωμα", αλλά κατανοώ σε βάθος τη δομή της ψυχοπαθολογίας.</p>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-2xl border border-brand-bone shadow-sm reveal">
+                    <div class="w-10 h-10 rounded-full bg-brand-sand/30 flex items-center justify-center mb-6">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-primary"></i>
                     </div>
-                    
-                    <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-brand-primary before:rounded-full">
-                        <h4 class="text-xl font-serif font-bold text-brand-dark mb-2">Η Ψυχραιμία της «Πρώτης Γραμμής»</h4>
-                        <p class="text-brand-text font-light text-sm leading-relaxed">Εκπαιδευμένη στη διαχείριση κρίσεων (Ε.Κ.Κ.Α. 197 & 1107). Στο γραφείο θα βρείτε μια θεραπεύτρια απόλυτα γειωμένη και παρούσα στις δυσκολίες σας.</p>
+                    <h4 class="text-xl font-serif font-bold text-brand-dark mb-4">Κλινική Αρτιότητα</h4>
+                    <p class="text-brand-text font-light text-sm leading-relaxed">Δεν βλέπω απλώς το "σύμπτωμα" αλλά συνδυάζω την κλινική γνώση με μια στάση αποδοχής, εστιάζοντας στη μοναδική προσωπική ιστορία κάθε ανθρώπου.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl border border-brand-bone shadow-sm reveal reveal-delay-1">
+                    <div class="w-10 h-10 rounded-full bg-brand-sand/30 flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-brand-primary"></i>
                     </div>
+                    <h4 class="text-xl font-serif font-bold text-brand-dark mb-4">Ασφαλές Πλαίσιο</h4>
+                    <p class="text-brand-text font-light text-sm leading-relaxed">Στόχος είναι η δημιουργία ενός ασφαλούς πλαισίου, όπου μπορούν να εκφραστούν και να επεξεργαστούν δύσκολα συναισθήματα και εμπειρίες.</p>
+                </div>
 
-                    <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-brand-primary before:rounded-full">
-                        <h4 class="text-xl font-serif font-bold text-brand-dark mb-2">Μηδενική Επίκριση</h4>
-                        <p class="text-brand-text font-light text-sm leading-relaxed">Η εθελοντική εργασία στην «Επάνοδο» δίδαξε την άνευ όρων αποδοχή. Ό,τι κι αν έχετε σκεφτεί ή νιώσει, εδώ δεν θα κριθείτε ποτέ.</p>
+                <div class="bg-white p-8 rounded-2xl border border-brand-bone shadow-sm reveal reveal-delay-2">
+                    <div class="w-10 h-10 rounded-full bg-brand-sand/30 flex items-center justify-center mb-6">
+                        <i data-lucide="heart-handshake" class="w-5 h-5 text-brand-primary"></i>
                     </div>
-
-                    <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-brand-primary before:rounded-full">
-                        <h4 class="text-xl font-serif font-bold text-brand-dark mb-2">Η Δύναμη της Ομάδας</h4>
-                        <p class="text-brand-text font-light text-sm leading-relaxed">Η ίαση έρχεται μέσα από τη σχέση. Μέσω της Ομαδικής Ανάλυσης, δίνεται η ευκαιρία στους θεραπευόμενους να χτίσουν αυθεντικές συνδέσεις.</p>
-                    </div>
+                    <h4 class="text-xl font-serif font-bold text-brand-dark mb-4">Θεραπευτική Σχέση</h4>
+                    <p class="text-brand-text font-light text-sm leading-relaxed">Δίνω έμφαση στη θεραπευτική σχέση, είτε σε ατομικό είτε σε ομαδικό πλαίσιο, ως το κύριο όχημα για την κατανόηση και την αλλαγή.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Refined FAQ Section - Independent Accordions -->
+    <!-- FAQ Section -->
     <section id="faq" class="py-32 px-6 bg-white relative border-b border-brand-bone">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-start">
             
@@ -443,7 +418,7 @@
                     </button>
                     <div class="faq-answer-wrapper">
                         <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
-                            Η ατομική θεραπεία είναι πιο στοχευμένη (60 λεπτά) και επικεντρώνεται αποκλειστικά στη δική σας ιστορία και συμπτώματα. Η ομαδική θεραπεία (90 λεπτά) λειτουργεί ως μικρόκοσμος της κοινωνίας, όπου μέσω της αλληλεπίδρασης με άλλους που αντιμετωπίζουν παρόμοιες προκλήσεις, χτίζετε διαπροσωπικές δεξιότητες και σπάτε την απομόνωση.
+                            Η ατομική θεραπεία είναι πιο στοχευμένη και επικεντρώνεται αποκλειστικά στη δική σας ιστορία. Η ομαδική θεραπεία λειτουργεί ως μικρόκοσμος της κοινωνίας, όπου μέσω της αλληλεπίδρασης με άλλους, χτίζετε διαπροσωπικές δεξιότητες και σπάτε την απομόνωση.
                         </div>
                     </div>
                 </div>
@@ -459,7 +434,7 @@
                     </button>
                     <div class="faq-answer-wrapper">
                         <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
-                            Ναι, οι ατομικές συνεδρίες παρέχονται και διαδικτυακά. Διεξάγονται μέσω ασφαλούς πλατφόρμας βιντεοκλήσης, με την ίδια αυστηρή τήρηση του απορρήτου, τον ίδιο επαγγελματισμό και τη ζεστασιά μιας διά ζώσης συνεδρίας.
+                            Ναι, οι δυαδικές συνεδρίες μπορούν να πραγματοποιηθούν και διαδικτυακά, με την ίδια τήρηση του απορρήτου, τον ίδιο επαγγελματισμό και τη ζεστασιά μιας διά ζώσης συνεδρίας.
                         </div>
                     </div>
                 </div>
@@ -475,7 +450,7 @@
                     </button>
                     <div class="faq-answer-wrapper">
                         <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
-                            Η πρώτη συνεδρία είναι κυρίως αναγνωριστική. Θα δημιουργήσουμε έναν ασφαλή χώρο χωρίς καμία κριτική, για να ακούσω τους λόγους που σας οδήγησαν εδώ, να κατανοήσω το αίτημά σας και να συζητήσουμε από κοινού το θεραπευτικό πλάνο που σας ταιριάζει.
+                            Η πρώτη συνεδρία είναι κυρίως αναγνωριστική. Θα δημιουργήσουμε έναν ασφαλή χώρο χωρίς καμία κριτική, για να ακούσω τους λόγους που σας οδήγησαν εδώ, να κατανοήσω το αίτημά σας και να συζητήσουμε από κοινού το θεραπευτικό πλάνο.
                         </div>
                     </div>
                 </div>
@@ -491,7 +466,7 @@
                     </button>
                     <div class="faq-answer-wrapper">
                         <div class="pl-14 md:pl-16 pb-8 text-brand-text font-light leading-relaxed">
-                            Φυσικά. Η ψυχοθεραπεία δεν απευθύνεται μόνο σε ανθρώπους με κλινικά συμπτώματα όπως άγχος ή κατάθλιψη. Είναι ένα εξαιρετικό εργαλείο για την προσωπική σας ανάπτυξη, τη βελτίωση των σχέσεών σας, την αυτογνωσία και τη θέσπιση υγιών ορίων στη ζωή σας.
+                            Φυσικά. Η ψυχοθεραπεία δεν απευθύνεται μόνο σε ανθρώπους με κλινικά συμπτώματα. Είναι ένα εξαιρετικό εργαλείο για την προσωπική ανάπτυξη, τη βελτίωση των σχέσεων, την αυτογνωσία και τη θέσπιση υγιών ορίων στη ζωή.
                         </div>
                     </div>
                 </div>
@@ -500,7 +475,7 @@
     </section>
 
     <!-- Symmetrical Space Gallery Section -->
-    <section id="space" class="py-32 px-6 bg-brand-alabaster relative">
+    <section id="space" class="py-32 px-6 bg-brand-alabaster relative border-b border-brand-bone">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20 reveal">
                 <div class="flex items-center justify-center gap-4 mb-6">
@@ -512,9 +487,8 @@
                 <p class="text-brand-text font-light max-w-2xl mx-auto">Ένα περιβάλλον σχεδιασμένο με αισθητική και σεβασμό, για να αποπνέει ηρεμία, ζεστασιά και απόλυτη ιδιωτικότητα.</p>
             </div>
 
-            <!-- Symmetrical CSS Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Gallery Images (Forcing aspect ratios for perfect symmetry) -->
+                <!-- Gallery Images -->
                 <button class="aspect-[4/3] w-full rounded-xl overflow-hidden group relative reveal shadow-glass border border-brand-bone" onclick="openLightbox('https://cdn.doctoranytime.gr/practices/e7b01a23-3bbc-4ced-9d46-30dc525677e2.jpg')">
                     <img src="https://cdn.doctoranytime.gr/practices/e7b01a23-3bbc-4ced-9d46-30dc525677e2.jpg" alt="Χώρος" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
                     <div class="absolute inset-0 bg-brand-mocha/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
@@ -557,7 +531,6 @@
                     </div>
                 </button>
 
-                <!-- 7th Image spans the full width to maintain perfect symmetry -->
                 <button class="md:col-span-2 lg:col-span-3 aspect-[16/9] md:aspect-[21/9] lg:aspect-[24/7] w-full rounded-xl overflow-hidden group relative reveal shadow-glass border border-brand-bone" onclick="openLightbox('https://cdn.doctoranytime.gr/practices/877c2ae3-6945-4761-81c6-a18572095092.jpg')">
                     <img src="https://cdn.doctoranytime.gr/practices/877c2ae3-6945-4761-81c6-a18572095092.jpg" alt="Χώρος" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out">
                     <div class="absolute inset-0 bg-brand-mocha/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
@@ -589,12 +562,10 @@
         </div>
 
         <div class="w-full relative pb-10">
-            <!-- Fade Edges -->
             <div class="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
             <div class="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
             
             <div class="marquee-container animate-marquee">
-                <!-- Review Items Block -->
                 <div class="flex space-x-6 px-3">
                     <!-- Danae -->
                     <div class="w-[380px] bg-brand-alabaster p-10 rounded-[2rem] border border-brand-bone shadow-sm shrink-0">
@@ -830,7 +801,7 @@
                     <ul class="space-y-4 text-brand-bone font-light">
                         <li class="flex items-center gap-4">
                             <i data-lucide="clock" class="w-5 h-5 text-brand-primary shrink-0"></i>
-                            <span>Δευτέρα – Σάββατο</span>
+                            <span>Δευτέρα – Παρασκευή</span>
                         </li>
                         <li class="pl-9 text-brand-sand italic font-serif text-lg">
                             Κατόπιν Ραντεβού
@@ -916,7 +887,7 @@
             observer.observe(el);
         });
 
-        // 5. Solid FAQ Accordion Logic - Reliable Inline max-height calculation
+        // 5. Solid FAQ Accordion Logic - Reliable Inline max-height calculation without disappearing text
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             const btn = item.querySelector('.faq-btn');
